@@ -1,0 +1,45 @@
+{
+  "tasks": [
+    {
+      "id": 0,
+      "name": "Design",
+      "optimistic": 3,
+      "most_likely": 5,
+      "pessimistic": 8,
+      "predecessors": []
+    },
+    {
+      "id": 1,
+      "name": "Backend",
+      "optimistic": 5,
+      "most_likely": 8,
+      "pessimistic": 12,
+      "predecessors": [0]
+    },
+    {
+      "id": 2,
+      "name": "Frontend",
+      "optimistic": 4,
+      "most_likely": 7,
+      "pessimistic": 11,
+      "predecessors": [0]
+    },
+    {
+      "id": 3,
+      "name": "Integration",
+      "optimistic": 3,
+      "most_likely": 5,
+      "pessimistic": 9,
+      "predecessors": [1, 2]
+    }
+  ],
+  "target_duration": 30,
+  "risk_events": [
+    {
+      "name": "Vendor delay",
+      "probability": 0.3,
+      "impact_days": 7,
+      "tasks": [1, 2]
+    }
+  ]
+}

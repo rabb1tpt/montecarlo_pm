@@ -1,0 +1,73 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Design",
+      "optimistic": 2,
+      "most_likely": 3,
+      "pessimistic": 5,
+      "predecessors": []
+    },
+    {
+      "id": 2,
+      "name": "Backend API",
+      "optimistic": 3,
+      "most_likely": 5,
+      "pessimistic": 8,
+      "predecessors": [1]
+    },
+    {
+      "id": 3,
+      "name": "Frontend",
+      "optimistic": 3,
+      "most_likely": 4,
+      "pessimistic": 7,
+      "predecessors": [1]
+    },
+    {
+      "id": 4,
+      "name": "Integration",
+      "optimistic": 2,
+      "most_likely": 3,
+      "pessimistic": 6,
+      "predecessors": [2, 3]
+    },
+    {
+      "id": 5,
+      "name": "Testing",
+      "optimistic": 3,
+      "most_likely": 4,
+      "pessimistic": 5,
+      "predecessors": [4]
+    },
+    {
+      "id": 6,
+      "name": "Deploy",
+      "optimistic": 0.5,
+      "most_likely": 1,
+      "pessimistic": 2,
+      "predecessors": [5]
+    }
+  ],
+  "risk_events": [
+    {
+      "name": "API Scope Creep",
+      "probability": 0.3,
+      "impact_days": 3,
+      "tasks": [2]
+    },
+    {
+      "name": "Cross-team Coordination Delay",
+      "probability": 0.2,
+      "impact_days": 2,
+      "tasks": [3, 4]
+    },
+    {
+      "name": "Testing uncovers issues",
+      "probability": 0.7,
+      "impact_days": 4,
+      "tasks": [5]
+    }
+  ],
+  "target_duration": 20
+}
