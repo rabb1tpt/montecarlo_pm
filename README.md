@@ -18,6 +18,38 @@ Here's how you can use it:
 
 **Important Note**: The time unit is **generic**, meaning that you can treat it as *days, working days, weeks, sprints*. Whatever unit you choose, remember it and make sure you stay consistent.
 
+**Sample output**
+```bash
+Loaded project from ./demo/project.json
+Tasks        : 6
+Risk events  : 3
+Simulations  : 5000
+Target dur.  : 20
+Plot will be saved to: ./demo/project.png
+
+=== Project Duration Summary (Monte Carlo) ===
+Simulations run    : 5000
+Mean duration      :  21.96
+Median (50th pct)  :  21.98
+80th percentile    :  24.49
+90th percentile    :  25.71
+95th percentile    :  26.60
+
+Target duration    : 20.00
+P(finish ≤ target) :  24.1%
+
+=== Critical Path Frequency ===
+Task ID | %-on-critical-path | Name
+---------------------------------------------
+     1 |              100.0% | Design
+     4 |              100.0% | Integration
+     6 |              100.0% | Deploy
+     5 |              100.0% | Testing
+     2 |               69.5% | Backend API
+     3 |               30.5% | Frontend
+Histogram saved to ./demo/project.png
+```
+
 ---
 
 ## Features
