@@ -1,0 +1,113 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Discovery",
+      "optimistic": 3,
+      "most_likely": 5,
+      "pessimistic": 8,
+      "predecessors": []
+    },
+    {
+      "id": 2,
+      "name": "Design",
+      "optimistic": 5,
+      "most_likely": 8,
+      "pessimistic": 12,
+      "predecessors": [1]
+    },
+    {
+      "id": 3,
+      "name": "Tech Spec",
+      "optimistic": 2,
+      "most_likely": 4,
+      "pessimistic": 7,
+      "predecessors": [2]
+    },
+    {
+      "id": 4,
+      "name": "Dev",
+      "optimistic": 10,
+      "most_likely": 15,
+      "pessimistic": 25,
+      "predecessors": [3]
+    },
+    {
+      "id": 5,
+      "name": "Tests",
+      "optimistic": 3,
+      "most_likely": 5,
+      "pessimistic": 10,
+      "predecessors": [4]
+    },
+    {
+      "id": 6,
+      "name": "Client Acceptance Tests",
+      "optimistic": 2,
+      "most_likely": 4,
+      "pessimistic": 8,
+      "predecessors": [5]
+    },
+    {
+      "id": 7,
+      "name": "Handover",
+      "optimistic": 1,
+      "most_likely": 2,
+      "pessimistic": 4,
+      "predecessors": [6]
+    },
+    {
+      "id": 8,
+      "name": "Close",
+      "optimistic": 0.5,
+      "most_likely": 1,
+      "pessimistic": 2,
+      "predecessors": [7]
+    }
+  ],
+  "risk_events": [
+    {
+      "name": "Scope Creep",
+      "probability": 0.4,
+      "impact_days": 4,
+      "tasks": [1, 2]
+    },
+    {
+      "name": "Technical Complexity Uncovered",
+      "probability": 0.35,
+      "impact_days": 5,
+      "tasks": [3, 4]
+    },
+    {
+      "name": "Integration Issues",
+      "probability": 0.3,
+      "impact_days": 3,
+      "tasks": [4, 5]
+    },
+    {
+      "name": "Client Unavailable for Review",
+      "probability": 0.5,
+      "impact_days": 4,
+      "tasks": [6]
+    },
+    {
+      "name": "Late Requirement Changes",
+      "probability": 0.25,
+      "impact_days": 6,
+      "tasks": [2, 4, 5]
+    },
+    {
+      "name": "Key Resource Unavailability",
+      "probability": 0.2,
+      "impact_days": 5,
+      "tasks": [4]
+    },
+    {
+      "name": "Third-Party API Issues",
+      "probability": 0.15,
+      "impact_days": 3,
+      "tasks": [4, 5]
+    }
+  ],
+  "target_duration": 45
+}
